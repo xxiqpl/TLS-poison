@@ -6,11 +6,11 @@ services:
     - "443:443"
     volumes:
     - .:/code
-    - /etc/letsencrypt/live/ssltest.jmaddux.com:/certs/live/ssltest.jmaddux.com:ro
-    - /etc/letsencrypt/archive/ssltest.jmaddux.com:/certs/archive/ssltest.jmaddux.com:ro
-    environment:
-    - CERTS=/certs/live/ssltest.jmaddux.com/fullchain.pem
-    - KEY=/certs/live/ssltest.jmaddux.com/privkey.pem
+#    - /etc/letsencrypt/live/ssltest.jmaddux.com:/certs/live/ssltest.jmaddux.com:ro
+#    - /etc/letsencrypt/archive/ssltest.jmaddux.com:/certs/archive/ssltest.jmaddux.com:ro
+#    environment:
+#    - CERTS=/certs/live/ssltest.jmaddux.com/fullchain.pem
+#    - KEY=/certs/live/ssltest.jmaddux.com/privkey.pem
     links:
     - redis
   custom-dns:
@@ -27,3 +27,5 @@ services:
     - redis
   redis:
     image: redis
+    ports:
+    - "6379:6379"

@@ -1,4 +1,4 @@
-FROM python:3.7-slim-buster
+FROM python:3.8-slim-buster
 
 # This should be the IP of the custom-TLS box
 ENV INITIAL_IP 127.0.0.1
