@@ -9,10 +9,8 @@ RUN bash build-a-pki.sh
 
 WORKDIR /app/client-hello-poisoning/custom-tls
 
-
+RUN apt-get update && apt-get install curl -y
 RUN curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
-
-RUN apt update
 RUN rustup default stable
 RUN cargo build
 RUN cargo install --path .
